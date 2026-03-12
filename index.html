@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futsal Interativo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00b4d8;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0096c7;
+        }
+
+        #info {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Mundo do Futsal</h1>
+    </header>
+
+    <div class="container">
+        <p>Descubra curiosidades, regras e posições do futsal!</p>
+        <button onclick="mostrarInfo('curiosidades')">Curiosidades</button>
+        <button onclick="mostrarInfo('regras')">Regras</button>
+        <button onclick="mostrarInfo('posicoes')">Posições</button>
+
+        <div id="info"></div>
+    </div>
+
+    <script>
+        function mostrarInfo(tipo) {
+            const infoDiv = document.getElementById('info');
+            let conteudo = '';
+
+            if (tipo === 'curiosidades') {
+                conteudo = `
+                    <h2>Curiosidades sobre Futsal</h2>
+                    <ul>
+                        <li>O futsal foi criado no Uruguai em 1930.</li>
+                        <li>É jogado com 5 jogadores em cada time.</li>
+                        <li>O jogo é mais rápido que o futebol de campo e exige muita técnica.</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Futsal_game.JPG/800px-Futsal_game.JPG" alt="Jogo de Futsal">
+                `;
+            } else if (tipo === 'regras') {
+                conteudo = `
+                    <h2>Regras Básicas do Futsal</h2>
+                    <ul>
+                        <li>Partida com 2 tempos de 20 minutos cada.</li>
+                        <li>O goleiro pode usar as mãos dentro da sua área.</li>
+                        <li>Substituições ilimitadas durante o jogo.</li>
+                        <li>Faltas acumulativas resultam em tiro livre sem barreira a partir da 6ª falta.</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Futsal_ball.jpg/640px-Futsal_ball.jpg" alt="Bola de Futsal">
+                `;
+            } else if (tipo === 'posicoes') {
+                conteudo = `
+                    <h2>Posições no Futsal</h2>
+                    <ul>
+                        <li>Goleiro: protege o gol e inicia as jogadas.</li>
+                        <li>Fixo: defensor que organiza a defesa.</li>
+                        <li>Ala: jogador rápido pelas laterais, ofensivo e defensivo.</li>
+                        <li>Pivô: atacante central, responsável por marcar gols.</li>
+                    </ul>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Futsal_positions.svg/640px-Futsal_positions.svg.png" alt="Posições do Futsal">
+                `;
+            }
+
+            infoDiv.innerHTML = conteudo;
+        }
+    </script>
+</body>
+</html>
